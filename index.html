@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="mainAppModule">
+
+<head>
+    <title>Јонгис нарачки v2.0</title>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="/app/services/services.js"></script>
+    <script src="/app/pages/navbar/navbar.js"></script>
+    <script src="/app/pages/main/main.js"></script>
+    <script src="/app/pages/login/login.js"></script>
+    <script src="/app/pages/admin/admin.js"></script>
+    <script src="/app/pages/pages.js"></script>
+    <script src="/app/pages/login/directives/login-directive.js"></script>
+    <script src="/app/pages/admin/directives/admin-directive.js"></script>
+    <script src="/app/pages/main/directives/main-directive.js"></script>
+    <script src="/app/pages/admin/services/admin-service.js"></script>
+    <script src="/app/pages/login/services/login-service.js"></script>
+    <script src="/app/pages/main/services/main-service.js"></script>
+    <script src="/app/pages/login/signup-form.js"></script>
+
+</head>
+
+<body ng-controller="mainAppController as mainApp">
+    <ui-view></ui-view>
+
+</body>
+
+</html>

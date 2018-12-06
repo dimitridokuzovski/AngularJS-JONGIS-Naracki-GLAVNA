@@ -1,0 +1,1 @@
+angular.module("app.pages.main.services.main-service",[])
