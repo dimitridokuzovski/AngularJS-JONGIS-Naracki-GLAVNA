@@ -3,6 +3,7 @@ angular.module("app.pages.main", [
     "app.pages.main.services.main-service",
 
 ])
+    .config(config)
     .controller("mainController", mainController)
 function mainController() {
     

@@ -3,7 +3,7 @@ angular.module("app.pages.login.directives.login-directive", [])
 function loginDirective() {
     return {
         restrict: 'EA',
-        templateUrl: '/app/pages/login/directives/login-directive.js'
+        templateUrl: '/app/pages/login/directives/login-directive.html'
 
     }
 }

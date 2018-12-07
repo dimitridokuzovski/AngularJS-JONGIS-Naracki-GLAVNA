@@ -1,0 +1,22 @@
+{
+  "name": "AngularJS-JONGIS-Naracki-GLAVNA",
+  "version": "1.0.0",
+  "description": "Jongis Demo Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -o -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimitridokuzovski/AngularJS-JONGIS-Naracki-GLAVNA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "*"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
