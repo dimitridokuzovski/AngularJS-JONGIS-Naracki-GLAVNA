@@ -7,3 +7,11 @@ angular.module("app.pages.main", [
 function mainController() {
     
 }
+function config($stateProvider) {
+    $stateProvider.state('main', {
+        url: '/main',
+        templateUrl: '/app/pages/main/main.html',
+        controller: 'mainController as main'
+    })
+}
+
