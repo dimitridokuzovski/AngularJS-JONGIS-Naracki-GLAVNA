@@ -6,7 +6,16 @@ angular.module("mainAppModule", [
 
 ])
   .controller("mainAppController", mainAppController)
+.config(function ($stateProvider) {
+  console.log("config")
+  $stateProvider.state({
+    name: 'hello',
+    url: '/hello',
+    template: '<h3>hello world!</h3>'
+  })
+
+});
+  
 function mainAppController($scope) {
-  let mainApp = this;
-  mainApp.testModel = 'OK';
+  console.log("controller")
 }

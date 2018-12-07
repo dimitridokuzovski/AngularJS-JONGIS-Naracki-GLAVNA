@@ -3,7 +3,8 @@ angular.module("app.pages", [
     "app.pages.main",
     "app.pages.login",
     "app.pages.admin",
-    
+    "app.pages.signup",
+    "app.pages.orders"
 
 
 

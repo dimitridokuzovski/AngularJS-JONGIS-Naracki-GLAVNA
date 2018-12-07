@@ -3,7 +3,8 @@ angular.module("app.pages.admin.directives.admin-directive", [])
 function adminDirective() {
     return {
         restrict: 'EA',
-        templateUrl: '/app/pages/admin/directives/admin-directive.js'
+        templateUrl: '/app/pages/admin/directives/admin-directive.html'
 
     }
 }
+

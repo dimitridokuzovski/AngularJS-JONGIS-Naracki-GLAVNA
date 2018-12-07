@@ -8,16 +8,19 @@
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
     <script src="/app/services/services.js"></script>
+    <script src="/app/pages/navbar/navbar-directive/navbar-directive.js"></script>
     <script src="/app/pages/navbar/navbar.js"></script>
     <script src="/app/pages/main/main.js"></script>
     <script src="/app/pages/login/login.js"></script>
@@ -29,13 +32,19 @@
     <script src="/app/pages/admin/services/admin-service.js"></script>
     <script src="/app/pages/login/services/login-service.js"></script>
     <script src="/app/pages/main/services/main-service.js"></script>
-    <script src="/app/pages/login/signup-form.js"></script>
+    <script src="/app/pages/signup/signup.js"></script>
+    <script src="/index.js"></script>
+    <script src="/app/pages/orders/orders.js"></script>
+    <script src="/app/pages/orders/directives/orders-directive.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
 </head>
 
 <body ng-controller="mainAppController as mainApp">
+    <navbar-directive></navbar-directive>
     <ui-view></ui-view>
-
 </body>
 
 </html>

@@ -3,7 +3,7 @@ angular.module("app.pages.main.directives.main-directive", [])
 function mainDirective() {
     return {
         restrict: 'EA',
-        templateUrl: '/app/pages/main/directives/main-directive.js'
+        templateUrl: '/app/pages/main/directives/main-directive.html'
 
     }
 }
