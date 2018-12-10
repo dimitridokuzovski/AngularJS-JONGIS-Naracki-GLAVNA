@@ -13,6 +13,6 @@ function config($stateProvider) {
     $stateProvider.state('login', {
         url: '/login',
         templateUrl: '/app/pages/login/login.html',
-        controller: 'mainController as main'
+        controller: 'loginController as login'
     })
 }

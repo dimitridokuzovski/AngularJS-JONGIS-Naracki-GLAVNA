@@ -1,34 +1,35 @@
 <div style="text-align: center">
-    <h1 id="masaBroj">header</h1><br>
-    <button type="button" ng-click="" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-euro"></span>
-      Наплати</button></h1>
+    <h1 id="masaBroj"></h1><br>
+    <button type="button" ng-click="" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-euro"></span>
+        Наплати</button></h1>
 
-  </div>
-  <div style="margin-top:50px" class="container" >
-    <div class="row" >
-      <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-        <div  class="panel panel-default" >
-          <div class="panel-heading" style="text-align: center;height:50px;background-color: rgba(185, 218, 255, 0.616)">
-            <span style="font-size:25px;">Артикли</span>
-          </div>
-        <div class="panel-body">
+</div>
+<div style="margin-top:50px" class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="text-align: center;height:50px;background-color: rgba(137, 191, 252, 0.904)">
+                    <span style="font-size:25px;">Артикли</span>
+                </div>
+                <button ng-repeat="artikl in orders.artikli" style="width:100%;margin-bottom: 5px;margin-top: 10px" class="btn btn-warning">{{artikl.ime}}</button>
+                <div class="panel-body">
+                </div>
+            </div>
         </div>
-      </div>
-      </div>
-    
-    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-heading"  style="text-align: center;height:50px;background-color: rgba(202, 255, 103, 0.822)">
-          <span style="font-size:25px">Нарачка</span>
+
+
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="text-align: center;height:50px;background-color: rgba(252, 73, 73, 0.733)">
+                    <span style="font-size:25px">Нарачка</span>
+                </div>
+                <div class="row">
+                    <div id="narackiPanel" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-        <div id="narackiPanel" class="col-md-12 col-lg-12 col-sm-12 col-xs-12" >
-        <div class="panel-body">
-        </div>
-      </div>
-      </div>
     </div>
-  </div>
-  </div>
-  
-  </div>
+</div>

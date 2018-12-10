@@ -1,4 +1,7 @@
-angular.module("app.pages.signup", [])
+angular.module("app.pages.signup", [
+    "app.pages.signup.directives.signup-directive",
+    
+])
     .config(config)
     .controller("signupController", signupController)
 function signupController() {

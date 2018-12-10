@@ -3,6 +3,7 @@ angular.module("app.pages.orders.directives.orders-directive", [])
 function ordersDirective() {
     return {
         restrict: "EA",
+        // scope: {},
         templateUrl: "/app/pages/orders/directives/orders-directive.html"
     }
 }
