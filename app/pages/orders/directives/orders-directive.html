@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/app/pages/orders/directives/orders-directives.css">
 <div style="text-align: center">
     <h1 id="masaBroj"></h1><br>
     <button type="button" ng-click="" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-euro"></span>
@@ -11,7 +12,17 @@
                 <div class="panel-heading" style="text-align: center;height:50px;background-color: rgba(137, 191, 252, 0.904)">
                     <span style="font-size:25px;">Артикли</span>
                 </div>
-                <button ng-repeat="artikl in orders.artikli" style="width:100%;margin-bottom: 5px;margin-top: 10px" class="btn btn-warning">{{artikl.ime}}</button>
+                <div >
+                    <button ng-class="{'btn-danger':$index %3==0,'btn-success':$index %3!==0  }"  
+                        ng-repeat="artikl in orders.artikli" 
+                        style="width:100%;margin-top: 10px" 
+                        class="btn btn-lg"
+                        ng-mouseover="hoverIn(artikl)"
+                        ng-mouseleave="hoverOut()">
+                        <span ng-if="status==true">Додај</span>
+                        {{artikl.ime}}
+                    </button>
+                </div>
                 <div class="panel-body">
                 </div>
             </div>
@@ -20,7 +31,7 @@
 
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-heading" style="text-align: center;height:50px;background-color: rgba(252, 73, 73, 0.733)">
+                <div class="panel-heading" style="text-align: center;height:50px;background-color: #cbff3cde">
                     <span style="font-size:25px">Нарачка</span>
                 </div>
                 <div class="row">

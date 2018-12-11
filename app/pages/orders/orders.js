@@ -8,10 +8,18 @@ angular.module("app.pages.orders", [
 
 
 function ordersController($scope) {
+    let orders = this;
+    
+   
+    $scope.hoverIn = function(artikl){
+        this.status = true;
+    };
+    
+    $scope.hoverOut = function(artikl){
+        this.status = false;
+    };
 
-    var orders = this;
 
-    orders.test = 'asdasd';
     orders.artikli = [
         { ime: "Кока-кола", id: 1, kolicina: 1, opis: "0.33л" },
         { ime: "Фанта", id: 2, kolicina: 1, opis: "0.33л" },
@@ -22,6 +30,9 @@ function ordersController($scope) {
         { ime: "Еспресо", id: 7, kolicina: 1, opis: "0,15л" },
         { ime: "Швепс", id: 8, kolicina: 1, opis: "0.33л" }
     ]
+ 
+
+    
 }
 
 function config($stateProvider) {
