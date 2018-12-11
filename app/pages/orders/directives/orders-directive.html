@@ -18,8 +18,8 @@
                         style="width:100%;margin-top: 10px" 
                         class="btn btn-lg"
                         ng-mouseover="hoverIn(artikl)"
-                        ng-mouseleave="hoverOut()">
-                        <span ng-if="status==true">Додај</span>
+                        ng-mouseleave="hoverOut(artikl)">
+                        <span ng-if="artikl.status==true">Додај</span>
                         {{artikl.ime}}
                     </button>
                 </div>

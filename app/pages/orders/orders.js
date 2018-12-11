@@ -7,16 +7,22 @@ angular.module("app.pages.orders", [
 
 
 
-function ordersController($scope) {
+function ordersController($scope,$timeout) {
     let orders = this;
     
    
     $scope.hoverIn = function(artikl){
-        this.status = true;
+        // artikl.status = true;
+        // $scope.$apply()
+        // $timeout(function(){
+            artikl.status = true;
+        // })
     };
     
     $scope.hoverOut = function(artikl){
-        this.status = false;
+        artikl.status = false;
+        // $scope.$apply()
+
     };
 
 
