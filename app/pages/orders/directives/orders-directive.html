@@ -9,11 +9,12 @@
     <div class="row">
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:80px;background-color: #000000de">
-                    <span style="color: #b1b0b0;font-size:35px;">Артикли</span>
+                <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
+                    <span style="color: #b1b0b0;font-size:30px;"><span class="glyphicon glyphicon-shopping-cart"></span> Артикли</span>
                 </div>
                 <div >
                     <button ng-class="{'btn-primary':$index %2==0,'btn-success':$index %2!==0}"  
+                        ng-click=""
                         ng-repeat="artikl in orders.artikli" 
                         style="width:100%;margin-top: 10px" 
                         class="btn btn-lg"
@@ -31,8 +32,8 @@
 
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:80px;background-color: #000000de">
-                    <span style="font-size:35px;color: #b1b0b0;">Нарачка</span>
+                <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
+                    <span  style="font-size:30px;color: #b1b0b0;"><span class="glyphicon glyphicon-list-alt"></span> Нарачка</span>
                 </div>
                 <div class="row">
                     <div id="narackiPanel" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">

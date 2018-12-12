@@ -12,16 +12,11 @@ function ordersController($scope,$timeout) {
     
    
     $scope.hoverIn = function(artikl){
-        // artikl.status = true;
-        // $scope.$apply()
-        // $timeout(function(){
             artikl.status = true;
-        // })
     };
     
     $scope.hoverOut = function(artikl){
         artikl.status = false;
-        // $scope.$apply()
 
     };
 

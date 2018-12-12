@@ -5,8 +5,21 @@ angular.module("app.pages.login", [
 ])
     .config(config)
     .controller("loginController", loginController)
-function loginController() {
+function loginController($scope, $state) {
+    let login = this;
 
+    login.goToSignup = function () {
+        $state.transitionTo('signup');
+    }
+
+    login.loginFunction = function () {
+        if (login.code == "0000") {
+            $state.transitionTo('main')
+        }
+    }
+    login.clear = function () {
+        login.code = "";
+    }
 }
 
 function config($stateProvider) {
@@ -16,3 +29,4 @@ function config($stateProvider) {
         controller: 'loginController as login'
     })
 }
+
