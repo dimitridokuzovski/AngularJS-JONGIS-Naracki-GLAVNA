@@ -10,15 +10,12 @@
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
-                    <span style="color: #b1b0b0;font-size:30px;"><span class="glyphicon glyphicon-shopping-cart"></span> Артикли</span>
+                    <span style="color: #b1b0b0;font-size:30px;"><span class="glyphicon glyphicon-shopping-cart"></span>
+                        Артикли</span>
                 </div>
-                <div >
-                    <button ng-class="{'btn-primary':$index %2==0,'btn-success':$index %2!==0}"  
-                        ng-click=""
-                        ng-repeat="artikl in orders.artikli" 
-                        style="width:100%;margin-top: 10px" 
-                        class="btn btn-lg"
-                        ng-mouseover="hoverIn(artikl)"
+                <div>
+                    <button ng-class="{'btn-primary':$index %2==0,'btn-success':$index %2!==0}" ng-click="" ng-repeat="artikl in orders.artikli"
+                        style="width:100%;margin-top: 10px" class="btn btn-lg" ng-mouseover="hoverIn(artikl)"
                         ng-mouseleave="hoverOut(artikl)">
                         <span ng-if="artikl.status==true">Додај</span>
                         {{artikl.ime}}
@@ -33,11 +30,17 @@
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
-                    <span  style="font-size:30px;color: #b1b0b0;"><span class="glyphicon glyphicon-list-alt"></span> Нарачка</span>
+                    <span style="font-size:30px;color: #b1b0b0;"><span class="glyphicon glyphicon-list-alt"></span>
+                        Нарачка</span>
                 </div>
                 <div class="row">
                     <div id="narackiPanel" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="panel-body">
+                            <div>
+                                <li style="border:1px solid black; padding: 10px" ng-repeat="artikl in orders.artikli">
+                                    {{artikl.ime +" "+ artikl.kolicina + " " }}</li>
+                                    <button></button>
+                            </div>
                         </div>
                     </div>
                 </div>
