@@ -14,9 +14,14 @@
                         Артикли</span>
                 </div>
                 <div>
-                    <button ng-class="{'btn-primary':$index %2==0,'btn-success':$index %2!==0}" ng-click="orders.addNaracki()" ng-repeat="artikl in orders.artikli"
-                        style="width:100%;margin-top: 10px" class="btn btn-lg" ng-mouseover="orders.hoverIn(artikl)"
-                        ng-mouseleave="orders.hoverOut(artikl)">
+                    <button 
+                    ng-class="{'btn-primary':$index %2==0,'btn-success':$index %2!==0}" 
+                    ng-click="orders.addNaracki()" 
+                    ng-repeat="artikl in orders.artikli"   
+                    style="width:100%;margin-top: 10px" 
+                    class="btn btn-lg" 
+                    ng-mouseover="orders.hoverIn(artikl)"
+                    ng-mouseleave="orders.hoverOut(artikl)">
                         <span ng-if="artikl.status==true">Додај</span>
                         {{artikl.ime}}
                     </button>
@@ -38,11 +43,11 @@
                         <div class="panel-body">
                             <div>
                                 <li style="background-color:rgb(230, 230, 230) ;list-style-type:none;white-space: nowrap;border:2px solid rgb(255, 255, 255); padding: 5px" ng-repeat="naracanArtikl in orders.naracaniArtikli track by $index">
-                                    <button type="button" ng-click="orders.deleteArtikl(naracaniArtikli)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
-                                    {{naracanArtikl[1].ime}}
+                                    <button type="button" ng-click="orders.deleteArtikl()" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
+                                    {{naracanArtikl.ime}}
                                     <span style="float:right">
                                     <button type="button" ng-click="orders.decrementArtikl()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-minus"></span></button>
-                                    {{naracanArtikl[1].kolicina}}
+                                    {{naracanArtikl.kolicina}}
                                     <button type="button" ng-click="orders.incrementArtikl()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
                                     </span>
                                 </li>

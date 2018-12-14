@@ -34,40 +34,41 @@ function ordersController($scope, $timeout) {
     ]
 
 
-    orders.incrementArtikl = function (artikl) {
-        for (let artikl of orders.artikli) {
-            artikl.kolicina++;
+    orders.incrementArtikl = function () {
+        for (let naracanArtikl of orders.naracaniArtikli) {
+            naracanArtikl.kolicina++;
         }
     };
 
-    orders.decrementArtikl = function (artikl, artiklId) {
-        for (let artikl of orders.artikli) {
-            if (artikl.kolicina > 1) {
-                artikl.kolicina--;
+    orders.decrementArtikl = function () {
+        for (let naracanArtikl of orders.naracaniArtikli) {
+            if (naracanArtikl.kolicina > 1) {
+                naracanArtikl.kolicina--;
             }
         }
     };
 
     orders.checkIfArtiklExists = function (id) {
-        for (let artikl of orders.artikli) {
-            if (artikl.id === id) {
+        for (let naracanArtikl of orders.naracaniArtikli) {
+            if (naracanArtikl.id === id) {
                 return 1
             }
         }
         return 0;
     }
 
-    orders.addNaracki = function (artiklId) {
-        if (orders.checkIfArtiklExists(artiklId)) {
-            for (let artikl of orders.artikli) {
-                if (artikl.id === artiklId) {
-                    artikl.kolicina++;
+    orders.addNaracki = function (id) {
+        if (orders.checkIfArtiklExists(id)) {
+            for (let naracanArtikl of orders.naracaniArtikli) {
+                if (naracanArtikl.id === id) {
+                    naracanArtikl.kolicina++;
                 }
             }
         }
         else {
-            orders.naracaniArtikli.push(orders.artikli);
-
+            for (let artikl of orders.artikli) {
+            orders.naracaniArtikli.push(artikl);
+            }
         }
     }
 
@@ -75,8 +76,13 @@ function ordersController($scope, $timeout) {
         orders.naracaniArtikli.splice(index, 1);
     }
 
-
-
+    // orders.deleteArtikl = function (id) {
+    //     for (let i = 0; i < orders.naracaniArtikli.length; i++) {
+    //         if (orders.naracaniArtikli[i].id == id) {
+    //             orders.naracaniArtikli.splice(i, 1);
+    //         }
+    //     }
+    // }
 
     // orders.deleteArtikl = function () {
     //     let artiklToDelete = orders.artikl
