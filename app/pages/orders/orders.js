@@ -34,15 +34,16 @@ function ordersController($scope, $timeout) {
     ]
 
 
-    orders.incrementArtikl = function () {
+    orders.incrementArtikl = function (id) {
         for (let naracanArtikl of orders.naracaniArtikli) {
-            naracanArtikl.kolicina++;
+            if (naracanArtikl.id === id) {
+                naracanArtikl.kolicina++;
+            }
         }
-    };
-
-    orders.decrementArtikl = function () {
+    }
+    orders.decrementArtikl = function (id) {
         for (let naracanArtikl of orders.naracaniArtikli) {
-            if (naracanArtikl.kolicina > 1) {
+            if (naracanArtikl.kolicina > 1 && naracanArtikl.id === id ) {
                 naracanArtikl.kolicina--;
             }
         }
@@ -67,7 +68,9 @@ function ordersController($scope, $timeout) {
         }
         else {
             for (let artikl of orders.artikli) {
-            orders.naracaniArtikli.push(artikl);
+                if (artikl.id === id) {
+                    orders.naracaniArtikli.push(artikl);
+                }
             }
         }
     }
