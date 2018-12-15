@@ -44,7 +44,7 @@
                             <div>
                                 <li style="background-color:rgb(230, 230, 230) ;list-style-type:none;white-space: nowrap;border:2px solid rgb(255, 255, 255); padding: 5px" 
                                 ng-repeat="naracanArtikl in orders.naracaniArtikli track by $index">
-                                    <button type="button" ng-click="orders.deleteArtikl(artikl.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
+                                    <button type="button" ng-click="orders.deleteArtikl($index)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
                                     {{naracanArtikl.ime}}
                                     <span style="float:right">
                                     <button type="button" ng-click="orders.decrementArtikl(naracanArtikl.id)" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-minus"></span></button>

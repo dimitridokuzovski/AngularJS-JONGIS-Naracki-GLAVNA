@@ -75,9 +75,12 @@ function ordersController($scope, $timeout) {
         }
     }
 
-    orders.deleteArtikl = function (index) {
-        orders.naracaniArtikli.splice(index, 1);
+    orders.deleteArtikl = function ($index) {
+        orders.naracaniArtikli.splice($index, 1);
     }
+
+
+    
 
     // orders.deleteArtikl = function (id) {
     //     for (let i = 0; i < orders.naracaniArtikli.length; i++) {
@@ -87,14 +90,7 @@ function ordersController($scope, $timeout) {
     //     }
     // }
 
-    // orders.deleteArtikl = function () {
-    //     let artiklToDelete = orders.artikl
-    //     for (let i = 0; i < orders.artikli.length; i++) {
-    //         if (artiklToDelete === orders.artikli[i]) {
-    //             orders.artikli.splice(i, 1);
-    //         }
-    //     }
-    // }
+
 }
 
 function config($stateProvider) {
