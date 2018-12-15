@@ -1,8 +1,7 @@
 <link rel="stylesheet" href="/app/pages/orders/directives/orders-directives.css">
 <div style="text-align: center">
     <h1 id="masaBroj"></h1><br>
-    <button type="button" ng-click="" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-euro"></span>
-        Наплати</button></h1>
+    </h1>
 
 </div>
 <div style="margin-top:50px" class="container">
@@ -42,7 +41,7 @@
                     <div id="narackiPanel" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="panel-body">
                             <div>
-                                <li style="background-color:rgb(230, 230, 230) ;list-style-type:none;white-space: nowrap;border:2px solid rgb(255, 255, 255); padding: 5px" 
+                                <li style="background-color:rgb(226, 226, 226) ;list-style-type:none;white-space: nowrap;border:2px solid rgb(255, 255, 255); padding: 5px" 
                                 ng-repeat="naracanArtikl in orders.naracaniArtikli track by $index">
                                     <button type="button" ng-click="orders.deleteArtikl($index)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
                                     {{naracanArtikl.ime}}
@@ -51,7 +50,10 @@
                                     {{naracanArtikl.kolicina}}
                                     <button type="button" ng-click="orders.incrementArtikl(naracanArtikl.id)" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
                                     </span>
-                                </li>
+                                </li><br>
+                                <div style="text-align: center"><button type="button" ng-click="" class="btn btn-dark btn-lg"><span class="glyphicon glyphicon-euro"></span>
+                                    Наплати</button></div>
+
                             </div>
                         </div>
                     </div>

@@ -21,6 +21,8 @@ function ordersController($scope, $timeout) {
 
     };
 
+  
+
 
     orders.artikli = [
         { ime: "Кока-кола", id: 1, kolicina: 1, opis: "0.33л" },
@@ -30,7 +32,8 @@ function ordersController($scope, $timeout) {
         { ime: "Водка", id: 5, kolicina: 1, opis: "0.05л" },
         { ime: "Пелистерка", id: 6, kolicina: 1, opis: "1л" },
         { ime: "Еспресо", id: 7, kolicina: 1, opis: "0,15л" },
-        { ime: "Швепс", id: 8, kolicina: 1, opis: "0.33л" }
+        { ime: "Швепс", id: 8, kolicina: 1, opis: "0.33л" },
+        
     ]
 
 
@@ -78,18 +81,6 @@ function ordersController($scope, $timeout) {
     orders.deleteArtikl = function ($index) {
         orders.naracaniArtikli.splice($index, 1);
     }
-
-
-    
-
-    // orders.deleteArtikl = function (id) {
-    //     for (let i = 0; i < orders.naracaniArtikli.length; i++) {
-    //         if (orders.naracaniArtikli[i].id == id) {
-    //             orders.naracaniArtikli.splice(i, 1);
-    //         }
-    //     }
-    // }
-
 
 }
 
