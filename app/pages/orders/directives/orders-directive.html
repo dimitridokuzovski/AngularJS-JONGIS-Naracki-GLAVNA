@@ -9,8 +9,7 @@
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
-                    <span style="color: #b1b0b0;font-size:30px;"><span class="glyphicon glyphicon-shopping-cart"></span>
-                        Артикли</span>
+                    <span style="color: #b1b0b0;font-size:30px;"><span class="glyphicon glyphicon-shopping-cart"></span> Артикли</span>
                 </div>
                 <div>
                     <button 
@@ -34,15 +33,14 @@
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
-                    <span style="font-size:30px;color: #b1b0b0;"><span class="glyphicon glyphicon-list-alt"></span>
-                        Нарачка</span>
+                    <span style="font-size:30px;color: #b1b0b0;"><span class="glyphicon glyphicon-list-alt"></span> Нарачка</span>
                 </div>
                 <div class="row">
                     <div id="narackiPanel" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="panel-body">
                             <div>
                                 <li style="background-color:rgb(226, 226, 226) ;list-style-type:none;white-space: nowrap;border:2px solid rgb(255, 255, 255); padding: 5px" 
-                                ng-repeat="naracanArtikl in orders.naracaniArtikli track by $index">
+                                ng-repeat="naracanArtikl in orders.naracki track by $index">
                                     <button type="button" ng-click="orders.deleteArtikl($index)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
                                     {{naracanArtikl.ime}}
                                     <span style="float:right">

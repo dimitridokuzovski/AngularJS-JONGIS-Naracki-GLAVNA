@@ -9,7 +9,7 @@ angular.module("app.pages.orders", [
 
 function ordersController($scope, $timeout) {
     let orders = this;
-    orders.naracaniArtikli = []
+    orders.naracki = []
 
 
     orders.hoverIn = function (artikl) {
@@ -21,42 +21,94 @@ function ordersController($scope, $timeout) {
 
     };
 
-  
 
-    let setArtikli = (function () {
-    orders.artikli = [
-        { ime: "Кока-кола", id: 1, kolicina: 1, opis: "0.33л" },
-        { ime: "Фанта", id: 2, kolicina: 1, opis: "0.33л" },
-        { ime: "Скопско", id: 3, kolicina: 1, opis: "0.50л" },
-        { ime: "Текила", id: 4, kolicina: 1, opis: "0.05л" },
-        { ime: "Водка", id: 5, kolicina: 1, opis: "0.05л" },
-        { ime: "Пелистерка", id: 6, kolicina: 1, opis: "1л" },
-        { ime: "Еспресо", id: 7, kolicina: 1, opis: "0,15л" },
-        { ime: "Швепс", id: 8, kolicina: 1, opis: "0.33л" },
-    ]
-    localStorage.setItem('artikli', JSON.stringify(orders.artikli));
 
-})()
+    let setArtikli = function () {
+
+        orders.artikli = [
+
+            {
+                ime: "Кока-кола",
+                id: 1,
+                kolicina: 1,
+                opis: "0.33л"
+            },
+
+            {
+                ime: "Фанта",
+                id: 2,
+                kolicina: 1,
+                opis: "0.33л"
+            },
+
+            {
+                ime: "Скопско",
+                id: 3,
+                kolicina: 1,
+                opis: "0.50л"
+            },
+
+            {
+                ime: "Текила",
+                id: 4,
+                kolicina: 1,
+                opis: "0.05л"
+            },
+
+            {
+                ime: "Водка",
+                id: 5,
+                kolicina: 1,
+                opis: "0.05л"
+            },
+
+            {
+                ime: "Пелистерка",
+                id: 6,
+                kolicina: 1,
+                opis: "1л"
+            },
+
+            {
+                ime: "Еспресо",
+                id: 7,
+                kolicina: 1,
+                opis: "0,15л"
+            },
+
+            {
+                ime: "Швепс",
+                id: 8,
+                kolicina: 1,
+                opis: "0.33л"
+            },
+
+        ]
+        console.log(angular.toJson(orders.artikli))
+        localStorage.setItem('artikli', JSON.stringify(orders.artikli));
+
+    }
+    setArtikli()
 
 
 
     orders.incrementArtikl = function (id) {
-        for (let naracanArtikl of orders.naracaniArtikli) {
+        for (let naracanArtikl of orders.naracki) {
             if (naracanArtikl.id === id) {
                 naracanArtikl.kolicina++;
             }
         }
     }
     orders.decrementArtikl = function (id) {
-        for (let naracanArtikl of orders.naracaniArtikli) {
-            if (naracanArtikl.kolicina > 1 && naracanArtikl.id === id ) {
+        for (let naracanArtikl of orders.naracki) {
+            if (naracanArtikl.kolicina > 1 && naracanArtikl.id === id) {
                 naracanArtikl.kolicina--;
             }
         }
     };
 
     orders.checkIfArtiklExists = function (id) {
-        for (let naracanArtikl of orders.naracaniArtikli) {
+        for (let naracanArtikl of orders.naracki) {
             if (naracanArtikl.id === id) {
                 return 1
             }
@@ -66,7 +118,7 @@ function ordersController($scope, $timeout) {
 
     orders.addNaracki = function (id) {
         if (orders.checkIfArtiklExists(id)) {
-            for (let naracanArtikl of orders.naracaniArtikli) {
+            for (let naracanArtikl of orders.naracki) {
                 if (naracanArtikl.id === id) {
                     naracanArtikl.kolicina++;
                 }
@@ -75,14 +127,14 @@ function ordersController($scope, $timeout) {
         else {
             for (let artikl of orders.artikli) {
                 if (artikl.id === id) {
-                    orders.naracaniArtikli.push(artikl);
+                    orders.naracki.push(artikl);
                 }
             }
         }
     }
 
     orders.deleteArtikl = function ($index) {
-        orders.naracaniArtikli.splice($index, 1);
+        orders.naracki.splice($index, 1);
     }
 
 }
