@@ -23,7 +23,7 @@ function ordersController($scope, $timeout) {
 
   
 
-
+    let setArtikli = (function () {
     orders.artikli = [
         { ime: "Кока-кола", id: 1, kolicina: 1, opis: "0.33л" },
         { ime: "Фанта", id: 2, kolicina: 1, opis: "0.33л" },
@@ -33,8 +33,11 @@ function ordersController($scope, $timeout) {
         { ime: "Пелистерка", id: 6, kolicina: 1, opis: "1л" },
         { ime: "Еспресо", id: 7, kolicina: 1, opis: "0,15л" },
         { ime: "Швепс", id: 8, kolicina: 1, opis: "0.33л" },
-        
     ]
+    localStorage.setItem('artikli', JSON.stringify(orders.artikli));
+
+})()
+
 
 
     orders.incrementArtikl = function (id) {

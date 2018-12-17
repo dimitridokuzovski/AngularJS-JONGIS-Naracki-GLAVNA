@@ -1,7 +1,7 @@
 {
   "name": "AngularJS-JONGIS-Naracki-GLAVNA",
-  "version": "1.0.0",
-  "description": "Jongis Demo Test",
+  "version": "2.0.0",
+  "description": "AngularJS-JONGIS-Naracki-GLAVNA",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
