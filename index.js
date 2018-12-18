@@ -1,13 +1,19 @@
 angular.module("mainAppModule", [
   "ui.router",
   "app.pages",
-  'app.services',
   "ui.bootstrap",
+  "app.services"
 
 ])
   .controller("mainAppController", mainAppController)
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider,$urlRouterProvider) {
     console.log("config")
+
+    $urlRouterProvider.when('','/login');
+    $urlRouterProvider.when('/','/login');
+    $urlRouterProvider.otherwise('/login');
+ 
+
     $stateProvider.state({
       name: 'hello',
       url: '/hello',

@@ -1,5 +1,6 @@
 angular.module("app.pages.orders", [
-    "app.pages.orders.directives.orders-directive"
+    "app.pages.orders.directives.orders-directive",
+    'app.pages.orders.services'
 ])
     .config(config)
     .controller("ordersController", ordersController)
@@ -7,7 +8,10 @@ angular.module("app.pages.orders", [
 
 
 
-function ordersController($scope, $timeout) {
+function ordersController($scope, $timeout,$http) {
+    
+
+    
     let orders = this;
     orders.naracki = []
 
@@ -84,9 +88,9 @@ function ordersController($scope, $timeout) {
             },
 
         ]
+        
         console.log(angular.toJson(orders.artikli))
         localStorage.setItem('artikli', JSON.stringify(orders.artikli));
-
     }
     setArtikli()
 
@@ -99,6 +103,7 @@ function ordersController($scope, $timeout) {
             }
         }
     }
+    
     orders.decrementArtikl = function (id) {
         for (let naracanArtikl of orders.naracki) {
             if (naracanArtikl.kolicina > 1 && naracanArtikl.id === id) {
@@ -149,7 +154,6 @@ function config($stateProvider) {
 
 
 }
-
 
 
 
