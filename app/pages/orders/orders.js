@@ -8,13 +8,6 @@ angular.module("app.pages.orders", [
 
 function ordersController($scope, $timeout, $http) {
 
-    $http.post('/naracki.json', { ime: 'Скопско' }).
-        then(function (response) {
-        })
-
-
-
-
     let orders = this;
     orders.naracki = []
 
