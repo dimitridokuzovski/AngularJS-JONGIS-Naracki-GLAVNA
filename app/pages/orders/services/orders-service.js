@@ -1,7 +1,5 @@
 angular.module("app.pages.orders.services.orders-service", [])
     .factory("narackiService", narackiService)
-    // .service()
-    // .provider()
 
 function narackiService($http, $scope) {
 
@@ -17,10 +15,12 @@ function narackiService($http, $scope) {
 
     return {
         getRequest: getRequest,
-        onError:onError
-        
-    }
+        onError: onError
 
+    }
 }
 
+// $http.post('/naracki.json', {ime:'hello word!'}).
+//   then(function(response) {
+//   })
 

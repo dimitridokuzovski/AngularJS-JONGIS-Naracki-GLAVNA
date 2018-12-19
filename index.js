@@ -6,13 +6,13 @@ angular.module("mainAppModule", [
 
 ])
   .controller("mainAppController", mainAppController)
-  .config(function ($stateProvider,$urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     console.log("config")
 
-    $urlRouterProvider.when('','/login');
-    $urlRouterProvider.when('/','/login');
+    $urlRouterProvider.when('', '/login');
+    $urlRouterProvider.when('/', '/login');
     $urlRouterProvider.otherwise('/login');
- 
+
 
     $stateProvider.state({
       name: 'hello',

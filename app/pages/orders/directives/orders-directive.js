@@ -1,14 +1,15 @@
 angular.module("app.pages.orders.directives.orders-directive", [])
     .directive("ordersDirective", ordersDirective)
 function ordersDirective() {
-    
-  
+
+
     return {
         restrict: "EA",
-        // scope: {},
-        templateUrl: "/app/pages/orders/directives/orders-directive.html"
+        templateUrl: "/app/pages/orders/directives/orders-directive.html",
+        // scope: {'ordersController': "="},
     }
+
 }
 
-// $scope.status = true;
+
 
