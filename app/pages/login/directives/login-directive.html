@@ -1,22 +1,22 @@
 <link rel="stylesheet" type='text/html' href="app/pages/login/directives/login-directive.css">
-<title>Јонгис нарачки-Најава</title>
+<title>Login</title>
 <div style="text-align:center">
-    <h1>Јонгис нарачки v2.0</h1>
+    <h1>CheckOrder</h1>
     <div class="container" style="text-align:center;margin-top: 150px; width: 500px;padding: 30px;border: 1px ridge rgb(165, 165, 165);background-color: rgb(227, 229, 230)">
-        <img style="width:100px" alt="jongis" src="/jongis.png">
+        <!-- <img style="width:100px" alt="jongis" src="/jongis.png"> -->
 
-        <h1 style="font-size: 25px">Најава</h1><br>
+        <h1 style="font-size: 25px">Login</h1><br>
         <form id="loginForm" name="loginForm" autocomplete="off">
-            <input type="password" id="code" ng-model="login.code" placeholder="Внесете го вашиот код" 
+            <input type="password" id="code" ng-model="login.code" placeholder="Please enter your password" 
             class="form-control" minlength="3" maxlength="10" required><br>
             <button type="submit" ng-click="login.loginFunction()" class="btn btn-success" 
             style="width:100%;margin-bottom: 5px"><span class="glyphicon glyphicon-log-in"></span>
-                Најави се</button>
+                Log in</button>
             <button type="button" ng-click="login.clear()" class="btn btn-danger" 
             style="width:100%;margin-bottom: 5px"><span class="glyphicon glyphicon-erase"></span>
-                Исчисти</button>
-            <button type="button" ng-click="login.goToSignup()" class="btn btn-primary" style="width:100%">
-                <span class="glyphicon glyphicon-transfer"></span> Побарај код</button>
+                Clear</button>
+            <!-- <button type="button" ng-click="login.goToSignup()" class="btn btn-primary" style="width:100%">
+                <span class="glyphicon glyphicon-transfer"></span> Password request</button> -->
         </form>
     </div>
 </div>

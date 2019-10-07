@@ -21,72 +21,173 @@ function ordersController($scope, $timeout, $http) {
 
     };
 
-
-
     let setArtikli = function () {
+      
 
-        orders.artikli = [
-
+        orders.drinks = [
+            
             {
-                ime: "Кока-кола",
+                ime: "Coca-cola",
                 id: 1,
                 kolicina: 1,
                 opis: "0.33л"
             },
 
             {
-                ime: "Фанта",
+                ime: "Fanta",
                 id: 2,
                 kolicina: 1,
                 opis: "0.33л"
             },
 
             {
-                ime: "Скопско",
-                id: 3,
+                ime: "Schweppes",
+                id: 8,
                 kolicina: 1,
-                opis: "0.50л"
+                opis: "0.33л"
+            },
+            {
+                ime: "Sprite",
+                id: 20,
+                kolicina: 1,
+                opis: "0.33л"
             },
 
             {
-                ime: "Текила",
-                id: 4,
-                kolicina: 1,
-                opis: "0.05л"
-            },
-
-            {
-                ime: "Водка",
-                id: 5,
-                kolicina: 1,
-                opis: "0.05л"
-            },
-
-            {
-                ime: "Пелистерка",
+                ime: "Pelisterka",
                 id: 6,
                 kolicina: 1,
                 opis: "1л"
             },
 
             {
-                ime: "Еспресо",
-                id: 7,
+                ime: "Skopsko",
+                id: 3,
                 kolicina: 1,
-                opis: "0,15л"
+                opis: "0.50л"
+            },
+            {
+                ime: "Zlaten Dab",
+                id: 19,
+                kolicina: 1,
+                opis: "0.50л"
             },
 
             {
-                ime: "Швепс",
-                id: 8,
+                ime: "Whiskey",
+                id: 21,
                 kolicina: 1,
-                opis: "0.33л"
+                opis: "0.05л"
             },
 
+            {
+                ime: "Tequilla",
+                id: 4,
+                kolicina: 1,
+                opis: "0.05л"
+            },
+
+            {
+                ime: "Vodka",
+                id: 5,
+                kolicina: 1,
+                opis: "0.05л"
+            },
+
+            {
+                ime: "Nescafé",
+                id: 23,
+                kolicina: 1,
+                opis: "cold or hot"
+            },
+
+            {
+                ime: "Espresso",
+                id: 7,
+                kolicina: 1,
+                opis: "large"
+            },
+            
+            {
+                ime: "Macchiato small",
+                id: 17,
+                kolicina: 1,
+                opis: "small"
+            },
+
+            {
+                ime: "Macchiato large",
+                id: 18,
+                kolicina: 1,
+                opis: "large"
+            },
+
+            {
+                ime: "White wine",
+                id: 12,
+                kolicina: 1,
+                opis: "0.25л"
+            },
+            {
+                ime: "Red wine",
+                id: 16,
+                kolicina: 1,
+                opis: "0.25л"
+            },
+        ],
+
+        orders.food = [
+            {
+                ime: "Hamburger (Beef)",
+                id: 9,
+                kolicina: 1,
+                opis: "with beef meat"
+            },
+            {
+                ime: "Hamburger (pork)",
+                id: 10,
+                kolicina: 1,
+                opis: "with pork meat"
+            },
+            {
+                ime: "Chickenburger",
+                id: 11,
+                kolicina: 1,
+                opis: "with chicken meat"
+            },
+
+            {
+                ime: "Pork Rib",
+                id: 22,
+                kolicina: 1,
+                opis: "Pork"
+            },
+
+            {
+                ime: "Homemade sausage",
+                id: 14,
+                kolicina: 1,
+                opis: "Pork"
+            },
+            {
+                ime: "Chicken Breasts",
+                id: 15,
+                kolicina: 1,
+                opis: "Grilled"
+            },
+
+            {
+                ime: "Spaghetti",
+                id: 13,
+                kolicina: 1,
+                opis: "Bolognese"
+            },
         ]
 
-        console.log(angular.toJson(orders.artikli))
-        localStorage.setItem('artikli', JSON.stringify(orders.artikli));
+        console.log(angular.toJson(orders.drinks))
+        localStorage.setItem('drinks', JSON.stringify(orders.drinks));
+        localStorage.setItem('food', JSON.stringify(orders.food));
+        orders.artikli = orders.food.concat(orders.drinks)
     }
     setArtikli()
 

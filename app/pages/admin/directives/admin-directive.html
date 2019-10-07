@@ -1,30 +1,36 @@
 <link rel="stylesheet" href="/app/pages/admin/directives/admin-directive.css">
-<title>Админ</title>
+<title>Admin</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 <body>
-    <h1 style="text-align: center">Администратор</h1>
+    <h1 style="text-align: center"> Administrator</h1>
     <div class="container" style="margin-top:100px">
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="height:50px">
-                        <span style="font-size:25px">Маси</span>
-                        <button style="float:right;width: 150px;" type="button" class="btn btn-primary btn-sm">
-                            <span class="glyphicon glyphicon-cutlery"></span> Додај маса
+                        <span style="font-size:25px"> Tables</span>
+                        <button style="float:right;width: 150px;" data-toggle="modal" data-target="#myModal" type="button"
+                        class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-cutlery"></span> ADD NEW TABLE
                         </button>
                     </div>
                     <table style="width: 100%;border: 2px solid black">
                         <thead>
-                            <tr style="background-color:#46df6798">
-                                <th style="border:2px solid black;text-align:center"><strong>#</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Број на маса</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>ID</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Опис</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Опции</strong></th>
+                            <tr style="background-color:#a6caff">
+                                <th style="border:2px solid black;text-align:center;width: 3%"><strong> #</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> No.Table</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> ID</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> Description</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> Options</strong></th>
                         </thead>
-                        <tbody>
+                        <tbody ng-repeat="stavka in admin.existingTables">
+                            <td>{{$index + 1}}</td>
+                            <td>{{stavka.broj}}</td>
+                            <td>{{stavka.id}}</td>
+                            <td>{{stavka.opis}}</td>
+                            <td><button ng-click="deleteTable(' + existingTables.id + ')" class="btn-danger" style="width:10%;text-align: right"> + <span class="glyphicon glyphicon-trash"> + </span> Избриши </button> + {{stavka}}</td>
                         </tbody>
                     </table>
 
@@ -38,21 +44,21 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="height:50px">
-                        <span style="font-size:25px">Корисници</span>
+                        <span style="font-size:25px"> Users</span>
                         <button style="float:right;width: 150px;" type="submit" class="btn btn-primary btn-sm">
-                            <span class="glyphicon glyphicon-user"></span> Додај корисник
+                            <span class="glyphicon glyphicon-user"></span> ADD NEW USER
                         </button>
                     </div>
                     <table id="listUsers" style="width: 100%; border: 2px solid black">
                         <thead>
                             <tr style="background-color:#a6caff">
-                                <th style="border:2px solid black;text-align:center"><strong>#</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Име</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Презиме</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>ID</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Код </strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Улога</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Опции</strong></th>
+                                <th style="border:2px solid black;text-align:center;width: 3%;"><strong> #</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> First Name</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> Last Name</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> ID</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> Password</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> Role</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong> Options</strong></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,21 +68,76 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title"> Add table</h2>
+                        </div>
+                        <form id="myForm">
+                            <div class="modal-body" id="tables">
+                                Number: <input id="broj" class="form-control" type="text" placeholder="Внеси број" maxlength="6"
+                                    autocomplete="off" required><br>
+                                Description:
+                                <select id="opis" class="form-control" required>
+                                    <option id="Inside" value="Inside"> Inside</option>
+                                    <option id="Outside" value="Outside"> Outside</option>
+                                </select>
+                                <br />
+                            </div>
+                        </form>
+        
+                        <div class="modal-footer">
+                            <button type="button" ng-click="admin.addTables()" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>
+                                Submit
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="admin.onResetButton2()"><span class="glyphicon glyphicon-erase"></span>
+                                Clear
+                            </button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="modalInformation" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">IMPORTANT!</h4>
+                        </div>
+                        <div class="modal-body" id="modalInformation-content">
+        
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>
+                                Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="height:50px">
-                        <span style="font-size:25px">Барања за код</span>
+                        <span style="font-size:25px">Articles</span>
+                        <button style="float:right;width: 150px;" data-toggle="modal" data-target="#myModal" type="button"
+                        class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-glass"></span> ADD ARTICLE
+                        </button>
                     </div>
                     <table style="width: 100%;border: 2px solid black">
                         <thead>
-                            <tr style="background-color:#f34a4a83">
-                                <th style="border:2px solid black;text-align:center"><strong>#</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Име</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Презиме</strong></th>
+                            <tr style="background-color:#a6caff">
+                                <th style="border:2px solid black;text-align:center;width: 3%"><strong>#</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong>Name</strong></th>
                                 <th style="border:2px solid black;text-align:center"><strong>ID</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Код</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Улога</strong></th>
-                                <th style="border:2px solid black;text-align:center"><strong>Опции</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong>Description</strong></th>
+                                <th style="border:2px solid black;text-align:center"><strong>Options</strong></th>
 
                         </thead>
                     </table>

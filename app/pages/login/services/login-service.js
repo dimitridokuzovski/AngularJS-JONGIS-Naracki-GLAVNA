@@ -6,7 +6,7 @@ angular.module("app.pages.login.services.login-service",[])
 
 function loginService (){
 let clearService = function (user) {
-    console.log("Чистење на полето за код");
+    console.log("Cleaning password field");
     user.username = "";
 }
 return {

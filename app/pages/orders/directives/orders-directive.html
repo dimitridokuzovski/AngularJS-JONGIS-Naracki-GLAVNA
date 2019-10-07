@@ -2,25 +2,42 @@
 <div style="text-align: center">
     <h1 id="masaBroj"></h1><br>
     </h1>
-
+    
 </div>
 <div style="margin-top:50px" class="container">
     <div class="row">
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
-                    <span style="color: #b1b0b0;font-size:30px;"><span class="glyphicon glyphicon-shopping-cart"></span> Артикли</span>
+                    <span style="color: #b1b0b0;font-size:30px;"><span class="glyphicon glyphicon-shopping-cart"></span> Articles</span>
                 </div>
-                <div>
-                    <button 
+                <div class="tab-group-1" style="overflow: auto;height:450px;padding:20px">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a data-target=".tab-group-1 #drinks" data-toggle="tab">Drinks</a></li>
+                        <li><a data-target=".tab-group-1 #food" data-toggle="tab">Food</a></li>
+                    </ul>
+                    <button
+                    id="drinks"
                     ng-class="{'btn-primary':$index %2==0,'btn-success':$index %2!==0}" 
                     ng-click="orders.addNaracki(artikl.id)" 
-                    ng-repeat="artikl in orders.artikli"   
+                    ng-repeat="artikl in orders.drinks"   
                     style="width:100%;margin-top: 10px" 
                     class="btn btn-lg" 
                     ng-mouseover="orders.hoverIn(artikl)"
                     ng-mouseleave="orders.hoverOut(artikl)">
-                        <span ng-if="artikl.status==true">Додај</span>
+                        <span ng-if="artikl.status==true">Add</span>
+                        {{artikl.ime}}
+                    </button>
+                    <button 
+                    id="food"
+                    ng-class="{'btn-primary':$index %2==0,'btn-success':$index %2!==0}" 
+                    ng-click="orders.addNaracki(artikl.id)" 
+                    ng-repeat="artikl in orders.food"   
+                    style="width:100%;margin-top: 10px" 
+                    class="btn btn-lg" 
+                    ng-mouseover="orders.hoverIn(artikl)"
+                    ng-mouseleave="orders.hoverOut(artikl)">
+                        <span ng-if="artikl.status==true">Add</span>
                         {{artikl.ime}}
                     </button>
                 </div>
@@ -33,12 +50,12 @@
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading" style="margin-bottom: 10px;text-align: center;height:auto;background-color: #000000de">
-                    <span style="font-size:30px;color: #b1b0b0;"><span class="glyphicon glyphicon-list-alt"></span> Нарачка</span>
+                    <span style="font-size:30px;color: #b1b0b0;"><span class="glyphicon glyphicon-list-alt"></span> Order</span>
                 </div>
                 <div class="row">
                     <div id="narackiPanel" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                        <div class="panel-body">
-                            <div>
+                        <div class="panel-body" >
+                            <div style="height:450px;overflow: auto">
                                 <li style="background-color:rgb(226, 226, 226) ;list-style-type:none;white-space: nowrap;border:2px solid rgb(255, 255, 255); padding: 5px" 
                                 ng-repeat="naracanArtikl in orders.naracki track by $index">
                                     <button type="button" ng-click="orders.deleteArtikl($index)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
@@ -49,8 +66,8 @@
                                     <button type="button" ng-click="orders.incrementArtikl(naracanArtikl.id)" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
                                     </span>
                                 </li><br>
-                                <div style="text-align: center"><button type="button" ng-click="" class="btn btn-dark btn-lg"><span class="glyphicon glyphicon-euro"></span>
-                                    Наплати</button></div>
+                                <div ng-if="orders.naracki.length > 0" style="text-align: center"><button type="button" ng-click="" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-print"></span>
+                                    Print the order</button></div>
                             </div>
                         </div>
                         <div>{{naracki.ime}}</div>
@@ -61,3 +78,5 @@
         </div>
     </div>
 </div>
+<div ng-if="orders.naracki.length > 0" style="text-align: center"><button type="button" ng-click="" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-euro"></span>
+    Charge the order</button></div>

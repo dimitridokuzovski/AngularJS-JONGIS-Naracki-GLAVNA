@@ -1,23 +1,23 @@
-<title>Барање на код</title>
+<title>Password request</title>
 <div style="text-align:center">
-    <h1>Јонгис нарачки v2.0</h1>
+    <h1>Password request</h1>
     <div class="container" style="text-align:center;margin-top: 100px; width: 500px;padding: 30px;border: 1px ridge rgb(165, 165, 165);background-color: rgb(227, 229, 230)">
         <img style="width:100px" alt="jongis" src="/jongis.png">
 
-        <h1 style="font-size: 25px">Барање на код за најава</h1><br>
+        <h1 style="font-size: 15px">Please fill the empty fields</h1><br>
         <form id="loginForm" name="loginForm" autocomplete="off">
-            <input type="text" id="ime" ng-model="signup.user.ime" placeholder="Име" class="form-control" minlength="3"
+            <input type="text" id="ime" ng-model="signup.user.ime" placeholder="First Name" class="form-control" minlength="3"
                 maxlength="10" required><br>
-            <input type="text" id="prezime" ng-model="signup.user.prezime" placeholder="Презиме" class="form-control"
+            <input type="text" id="prezime" ng-model="signup.user.prezime" placeholder="Last Name" class="form-control"
                 minlength="3" maxlength="10" required><br>
-            <input type="password" id="code" ng-model="signup.user.code" placeholder="Код" class="form-control"
+            <input type="password" id="code" ng-model="signup.user.code" placeholder="Password" class="form-control"
                 minlength="3" maxlength="10" required><br>
             <button type="submit" ng-click="" class="btn btn-success" style="width:100%;margin-bottom: 5px"><span class="glyphicon glyphicon-send"></span>
-                Испрати</button>
+                Send</button>
             <button type="button" ng-click="signup.clear()" class="btn btn-danger" style="width:100%;margin-bottom: 5px"><span
-                    class="glyphicon glyphicon-erase"></span> Исчисти</button>
+                    class="glyphicon glyphicon-erase"></span> Clear</button>
             <button type="button" ng-click="signup.backToLogin()" class="btn btn-primary" style="width:100%;margin-bottom: 5px"><span
                     class="glyphicon glyphicon-arrow-left"></span>
-                Врати се </button>
+                Back </button>
         </form>
     </div>
